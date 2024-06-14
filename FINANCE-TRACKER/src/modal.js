@@ -1,3 +1,5 @@
+import { exitModalButton } from './buttons.js';
+
 /** 
     * This is the base modal that will be used to create the modal for the application. 
     * 
@@ -44,11 +46,14 @@ export function createModalBody(body) {
 }
 
 
-
+//TODO: Add body properties that creates a form for the user to input data.
 /** 
     * This function will create a modal with the header and body passed as arguments.
-    * @param {string} header - The header of the modal.
-    * @param {string} body - The body of the modal.
+    * @param {object} header - The header of the modal.
+    * @property {string} header.title - The title of the modal.
+    * 
+    * @param {object} body - The body of the modal.
+    * @property {string} body.text - The text of the modal.
 */
 export function createModal(header, body){
     const modal = baseModal();
@@ -56,6 +61,9 @@ export function createModal(header, body){
 
     modalContainer.appendChild(createModalHeader(header));
     modalContainer.appendChild(createModalBody(body));
+    modalContainer.appendChild(exitModalButton(() => {
+        console.log('Data is sent for processing');
+    }))
 
     return modal;
 }
