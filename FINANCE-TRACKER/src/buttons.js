@@ -1,5 +1,4 @@
-import modal, { showModal } from "./modal";
-
+import baseModal, { createModal, showModal } from "./modal";
 
 export function buttonElement() {
     const button = document.createElement('button');
@@ -10,10 +9,14 @@ export function buttonElement() {
 
 export function expenseButton() {
     const button = buttonElement();
-    button.setAttribute('class', 'expenseButton functionButton');
+    button.setAttribute('class', 'expenseButton functionButton')
+    button.innerText = 'Add Expense';
 
     button.addEventListener('click', () => {
-        const modalWindow = modal();
+        const modalWindow = createModal(
+            { title: 'Add Expense' }, 
+            { text: 'Enter the expense information below.' });
+            
         showModal(modalWindow);
     });
 

@@ -22,4 +22,3 @@ export function expenseElement(info, value) {
 
     return expense;
 }
-
