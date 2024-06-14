@@ -23,6 +23,22 @@ export function expenseButton() {
     return button;
 }
 
+export function incomeButton() {
+    const button = buttonElement();
+    button.setAttribute('class', 'incomeButton functionButton')
+    button.innerText = 'Add Expense';
+
+    button.addEventListener('click', () => {
+        const modalWindow = createModal(
+            { title: 'Add Income' }, 
+            { text: 'Enter the Income details below.' });
+
+        showModal(modalWindow);
+    });
+
+    return button;
+}
+
 /**
      * 
      * @param {function} processFunction Executes this function before exiting the modal. 
