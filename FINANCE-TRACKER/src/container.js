@@ -1,4 +1,5 @@
-import { expenseElement, expenseButton } from './elements.js';
+import { expenseElement } from './elements.js';
+import { expenseButton } from "./buttons.js";
 import modal, { showModal } from './modal.js';
 
 export function expenseContainer() {
