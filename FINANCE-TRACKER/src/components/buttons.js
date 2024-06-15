@@ -1,4 +1,5 @@
-import baseModal, { createModal, showModal } from "./modal";
+import { createModal, showModal } from "./modal";
+import { expenseForm } from "./forms";
 
 export function buttonElement() {
     const button = document.createElement('button');
@@ -14,8 +15,15 @@ export function expenseButton() {
 
     button.addEventListener('click', () => {
         const modalWindow = createModal(
-            { title: 'Add Expense' }, 
-            { text: 'Enter the expense information below.' });
+            { 
+                title: 'Add Expense' 
+            }, 
+            
+            { 
+                text: 'Enter the expense information below.',
+                form: expenseForm()
+            }
+        );
 
         showModal(modalWindow);
     });
@@ -26,7 +34,7 @@ export function expenseButton() {
 export function incomeButton() {
     const button = buttonElement();
     button.setAttribute('class', 'incomeButton functionButton')
-    button.innerText = 'Add Expense';
+    button.innerText = 'Add Income';
 
     button.addEventListener('click', () => {
         const modalWindow = createModal(
@@ -40,7 +48,6 @@ export function incomeButton() {
 }
 
 /**
-     * 
      * @param {function} processFunction Executes this function before exiting the modal. 
      * @returns {HTMLButtonElement} Returns a button element that exits the modal.
  */

@@ -1,4 +1,4 @@
-import { incomeContainer, expenseContainer, functionContainer } from "./container"
+import { incomeContainer, expenseContainer, functionContainer } from "./components/container"
 
 export default function App() {
     const App = document.createElement('div')
