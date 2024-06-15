@@ -1,5 +1,6 @@
-import { expenseElement, expenseButton } from './elements.js';
-import modal, { showModal } from './modal.js';
+import { expenseElement } from './elements.js';
+import { expenseButton, incomeButton } from "./buttons.js";
+import baseModal, { showModal } from './modal.js';
 
 export function expenseContainer() {
     const container = document.createElement('div');
@@ -24,6 +25,9 @@ export function functionContainer(incomeC, expenseC) {
     //
     const addExpense = expenseButton();
     container.appendChild(addExpense);
+
+    const addIncome = incomeButton();
+    container.appendChild(addIncome);
     //
 
     return container;
