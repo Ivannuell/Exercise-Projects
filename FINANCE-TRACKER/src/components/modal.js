@@ -40,7 +40,11 @@ export function createModalBody(body) {
     bodyText.setAttribute('class', 'modalBodyText');
     bodyText.innerText = body.text;
 
+    const form = body.form;
+    console.log(form);
+
     modalBody.appendChild(bodyText);
+    modalBody.appendChild(form);
 
     return modalBody;
 }
@@ -54,6 +58,7 @@ export function createModalBody(body) {
     * 
     * @param {object} body - The body of the modal.
     * @property {string} body.text - The text of the modal.
+    * @property {HTMLElement} body.form - The form of the modal.
 */
 export function createModal(header, body){
     const modal = baseModal();
